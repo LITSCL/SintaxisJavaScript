@@ -1,0 +1,22 @@
+.App {
+  text-align: center;
+}
+
+form {
+  margin-bottom: 50px;
+}
+
+form * {
+  display: block;
+  margin: 15px auto;
+  padding: 5px;
+}
+
+form input[type="submit"] {
+  cursor: pointer;
+}
+
+ul {
+  width: 300px;
+  margin: 0px auto;
+}

@@ -1,0 +1,14 @@
+<!-- Este es el componente principal de la aplicación (Aquí es donde se debe realizar todo el ciclo de vida de todos los componentes). -->
+
+<div [ngStyle]="{'background': config.background, 'border': '1px solid red'}"> <!-- Cambiando los estilos mediante una directiva. -->
+  
+  <h1>Titulo de la aplicación: <a [ngStyle]="{'color': config.color}" href="#">{{title}}</a></h1>
+  <app-componente></app-componente>
+  <button (click)="ocultarMostrarMenu(false)" *ngIf="menu">Ocultar Menu (Hook OnDestroy)</button> <!-- Implementando lógica al botón mediante una directiva. -->
+  <button (click)="ocultarMostrarMenu(true)" *ngIf="!menu">Mostrar Menu (Hook OnInit y DoCheck)</button>
+ 
+  <app-menu-navegacion *ngIf="menu == true"></app-menu-navegacion>
+  
+  <router-outlet></router-outlet> <!-- Esta etiqueta permite cargar el componente asociado a la ruta en la que se encuentra el usuario (Si el usuario se encuentra en localhost/4200/zapatilla, esta etiqueta equivaldría a <app-zapatilla></app-zapatilla>). -->
+  
+</div>

@@ -1,0 +1,14 @@
+/* Esta es la hoja de estilos del componente. */
+
+.alto-precio {
+  color: red;
+  font-size: 18px;
+}
+
+.color-verde {
+  color: green;
+}
+
+.letra-gruesa {
+  font-weight: bold;
+}

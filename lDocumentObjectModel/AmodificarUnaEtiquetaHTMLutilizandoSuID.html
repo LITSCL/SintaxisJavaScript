@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <div id="contenedor">Contenido sin modificar</div>
+
+    <!-- El Modelo de Objetos del Documento (DOM) es una interfaz de programación de aplicaciones (API) para documentos HTML y XML. Define la estructura lógica de los documentos y el modo en que se accede y manipula un documento. -->
+    <script>
+
+        var div_contenedor = document.getElementById("contenedor"); //Aca se se trae el elemento con ID=contenedor y se almacena en una variable.
+
+        div_contenedor.innerHTML = "Contenido modificado"; //Aca se esta esta modificando el contenido del contenedor utilizando la propiedad innerTHML.
+
+        console.log(div_contenedor.innerHTML); //Mostrando en consola el contenido del contenedor.
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    
+    <div>Conetido del div 0</div>
+    <div>Conetido del div 1</div>
+    <div>Conetido del div 2</div>
+    <div>Conetido del div 3</div>
+    <div>Conetido del div 4</div>
+    
+    <h1>Aca esta el contenido de la Sección (Es el que se inyecta en el bucle)</h1>
+    <section id="miSeccion"></section>
+    
+    <!-- El Modelo de Objetos del Documento (DOM) es una interfaz de programación de aplicaciones (API) para documentos HTML y XML. Define la estructura lógica de los documentos y el modo en que se accede y manipula un documento. -->
+    <script>
+        
+        var todosLosElementosDiv = document.getElementsByTagName("div"); //Aca se traen todos los elementos que tienen la etiqueta div y se almacenan en un array.
+        
+        console.log(todosLosElementosDiv); //Mostrando en consola el array.
+            
+        //Aca se estan modificando el background a todos los div utilizando reglas CSS.
+        todosLosElementosDiv[0].style.background = "red";
+        todosLosElementosDiv[1].style.background = "green";
+        todosLosElementosDiv[2].style.background = "pink";
+        todosLosElementosDiv[3].style.background = "yellow";
+        todosLosElementosDiv[4].style.background = "blue";
+        
+        var i;
+        for (i in todosLosElementosDiv) { //Aca se recorre el array.
+            
+            if (typeof todosLosElementosDiv[i].textContent === "string") { //Aca se esta preguntando si el contenido del <div></div> es un string.
+                
+            var parrafo = document.createElement("p"); //Aca se crea una variable, la cual crea una etiqueta <p></p> utilizando el método createElement.
+            var texto = document.createTextNode(todosLosElementosDiv[i].textContent); //Aca se crea una variable y se almacena el texto de las etiquetas <div></div>.
+            parrafo.appendChild(texto); //Aca se le adjunta el texto obtenido de las etiquetas <di></div> a la etiqueta <p></p> utilizando el método appendChild.
+            document.querySelector("#miSeccion").appendChild(parrafo); //Aca se le adjunta la etiqueta <p></p> al contenedor <section></section> utilizando el método appendChild.
+                
+            }
+        }          
+        
+    </script>
+</body>
+</html>

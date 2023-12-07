@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <h1 id="holaMundo">Hola Mundo</h1>
+
+    <script>
+
+        var h1_holaMundo = document.getElementById("holaMundo");
+
+        //Esto es un Timmer que ejecuta el código cada 500ms, el método setInterval recibe como primer parámetro una función callback y como segundo parámetro los milisegundos.
+        setInterval(function() {
+
+            if (h1_holaMundo.style.color === "green"){
+                h1_holaMundo.style.color = "red";
+            }
+            else {
+                h1_holaMundo.style.color = "green";
+            }
+            console.log("Método Set Interval ejecutado");
+        }, 500);
+
+    </script>
+
+</body>
+</html>

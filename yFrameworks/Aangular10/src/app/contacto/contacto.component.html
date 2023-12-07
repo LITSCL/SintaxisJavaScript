@@ -1,0 +1,37 @@
+<h2>Contacto</h2>
+
+<form #formContacto="ngForm" (ngSubmit)="onSubmit(formContacto)"> <!-- La directiva (ngSubmit) permite ejecutar un método al enviar los datos del formulario (También se está enviando el formulario por parámeotro "Para luego resetar los datos en el método"). -->
+    <label for="nombre">Nombre</label><br/>
+    <input type="text" name="nombre" #nombre="ngModel" [(ngModel)]="usuario.nombre" pattern="[a-zA-Z]+" required> <!-- En el "pattern" se recibe una expresión regular el cual indica que tipo de caracteres son válidos en el input -->
+
+    <span *ngIf="nombre.touched && !nombre.valid"> <!-- Aquí se esta consultando si el input "#nombre" fue clickeado y el contenido es válido. -->
+        El nombre es obligatorio
+    </span>
+
+    <br/>
+    <label for="apellido">Apellido</label><br/>
+    <input type="text" name="apellido" #apellido="ngModel" [(ngModel)]="usuario.apellido" pattern="[a-zA-Z]+" required>
+
+    <span *ngIf="apellido.touched && !apellido.valid">
+        El apellido es obligatorio
+    </span>
+
+    <br/>
+    <label for="email">Email</label><br/>
+    <input type="email" name="email" #email="ngModel" [(ngModel)]="usuario.email" required>
+
+    <span *ngIf="email.touched && !email.valid"> <!-- Aquí se esta consultando si el input "#nombre" fue clickeado y el contenido es válido. -->
+        El email no es válido
+    </span>
+
+    <br/>
+    <label for="mensaje">Mensaje</label><br/>
+    <textarea type="text" name="mensaje" #mensaje="ngModel" [(ngModel)]="usuario.mensaje" required></textarea>
+    
+    <span *ngIf="mensaje.touched && !mensaje.valid"> <!-- Aquí se esta consultando si el input "#nombre" fue clickeado y el contenido es válido. -->
+        El mensaje es obligatorio
+    </span>
+
+    <br/>
+    <input type="submit" value="Enviar" [disabled]="!formContacto.form.valid"> <!-- La directiva [disabled] permite deshabilitar el botón submit del formulario basandose en una condición. -->
+</form>

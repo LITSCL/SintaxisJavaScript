@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+
+    <button id="botonChromium">Presionar para cambiar de color (Chromium 81.0.4031.0)</button>
+    <button id="botonFirefox">Presionar para cambiar de color (Firefox 75.0)</button>
+
+    <script>
+
+        var button_botonChromium = document.querySelector("#botonChromium");
+        var button_botonFirefox = document.querySelector("#botonFirefox");
+
+        //Función que cambia el color de un botón en Chromium 81.0.4031.0 (No funciona en Chromium Firefox 75.0).
+        function cambiaColorChromium() {
+
+            var colorBoton = button_botonChromium.style.background;
+
+            if (colorBoton === "green") {
+                button_botonChromium.style.background = "red";
+            }
+            else {
+                button_botonChromium.style.background = "green";
+            }
+        }
+
+        //Función que cambia el color de un botón en Firefox 75.0 (No funciona en Chromium 81.0.4031.0).
+        function cambiaColorFirefox() {
+
+            var colorBoton = button_botonFirefox.style.background;
+            console.log(colorBoton);
+
+            if (colorBoton === "green none repeat scroll 0% 0%") {
+                    button_botonFirefox.style.background = "red";
+            }
+            else {
+                    button_botonFirefox.style.background = "green";
+            }
+        }
+
+        //Añadiendo evento al botón (Chromium).
+        button_botonChromium.addEventListener("dblclick", function() {
+            console.log("[dblclick] Se esta modificando la propiedad background");
+            cambiaColorChromium();
+        });
+
+        //Añadiendo evento al botón (Firefox).
+        button_botonFirefox.addEventListener("dblclick", function() {
+            console.log("[dblclick] Se esta modificando la propiedad background");
+            cambiaColorFirefox();
+        });
+
+    </script>
+
+</body>
+</html>

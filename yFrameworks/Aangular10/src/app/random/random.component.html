@@ -1,0 +1,14 @@
+<!-- Los pipes son una herramienta de Angular que nos permite transformar visualmente la información, por ejemplo, cambiar un texto a mayúsculas o minúsculas, o darle formato de fecha y hora. -->
+
+<h2>Uso de Pipes</h2>
+<h3>{{fecha}}</h3>
+<h3>{{fecha | date:'dd/MM/yyyy'}}</h3> <!-- Aquí se esta utilizando una pipe para formatear la fecha. -->
+<h3>{{fecha | date:'dd-MM-yy'}}</h3>
+<h3>{{fecha | date:'fullDate'}}</h3>
+<h3>{{fecha | date:'fullDate' | uppercase}}</h3> <!-- Aquí se estan utilizando dos Pipes. -->
+<h3>{{"HOLA MUNDO" | lowercase}}</h3>
+
+<br/>
+
+<h2>Uso de Pipe personalizado</h2>
+{{4 | calculadora: 2}}

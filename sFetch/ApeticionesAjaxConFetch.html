@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1>Listado de usuarios:</h1>
+    <div id="usuarios">
+        <span id="cargando">Cargando...</span>
+    </div>
+
+    <script>
+
+        var usuarios = [];
+        var div_usuarios = document.querySelector("#usuarios");
+
+        fetch("https://jsonplaceholder.typicode.com/users") //Fetch permite realizar peticiones asincronas (AJAX) a servidores externos (Consumo de API rest).
+        .then(response => response.json()) //El método then() retorna un promesa la cual permite encadenar datos. Aca se reciben los datos de la petición y se almacenan en el parámetro "response" y luego se convierte a json (La función flecha indica que se retorna data.json()).
+        .then(response => {
+            usuarios = response;
+
+            usuarios.map((user, i) => {
+                let nombre = document.createElement("h3");
+                nombre.innerHTML = i + " " + user.name; //Aqui se esta concatenando el nombre que almacena el atributo "name" del json.
+                div_usuarios.appendChild(nombre);
+
+                document.querySelector("#cargando").style.display = "none"; //Cuando se terminan de cargar los datos este elemento desaparece.
+          });
+        });
+
+    </script>
+
+</body>
+</html>

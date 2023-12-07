@@ -1,0 +1,66 @@
+<!-- Las Directivas extienden la funcionalidad del HTML usando para ello una nueva sintaxis. -->
+<!-- Existen las directivas "Estructurales" = "*ngFor, "*ngIf, [ngSwitch]" (Estas permiten cambiar el flujo de los elementos del DOM que se muestran). -->
+<!-- Existen también las directivas de "Atributo" = "[(ngModel)], ngClass, [ngStyle]" (Alteran la apariencia o comportamiento de un elemento del DOM). -->
+
+<p>Añadir Marca:</p>
+<p>
+  <input type="text" [(ngModel)]="miMarca"> <!-- La directiva ngModel añade reactividad, permite utilizar el "Two-Way data binding" (Permite modificar un valor desde la vista y que también se modifique en el modelo de datos), básicamente permite cambiar el valor de la variable de forma bidireccional. -->
+  <button (click)="getMiMarca()">Mostrar Marca</button> <!-- El evento "(click)" permite realizar una acción. -->
+  <button (click)="createMarca()">Añadir Marca</button>
+</p> 
+<p>{{miMarca}}</p> <!-- Mostrando el valor del atributo "miMarca". -->
+
+<h2>Nuestras Marcas:</h2>
+<ul>
+  <li *ngFor="let marca of marcas; let i = index">
+    {{i + " " + marca}}
+    <button (click)="removeMarca(i)">Borrar Marca</button>
+  </li> <!-- Recorriendo el Array (Atributo de la clase) con una directiva estructural *ngFor. -->
+</ul>
+
+<h2>Nuestros Modelos:</h2>
+<ul>
+  <!-- A la directiva "ngStyle" hay que entregarle un JSON -->
+  <li *ngFor="let zapatilla of zapatillas"> <!-- Recorriendo el Array con una directiva estructural *ngFor. -->
+    <span [ngStyle]="{'text-decoration': zapatilla.stock == false ? 'line-through' : 'none'}"> <!-- La directiva ngStyle permite asignar estilos en línea a un elemento del DOM (Permite tambíen asignar estilos basandose en una condición). -->
+      <span [ngClass]="{'color-verde': zapatilla.marca == 'Nike', 
+                        'letra-gruesa': zapatilla.marca == 'Nike'
+      }"> <!-- La directiva ngClass recibe como valor un JSON, permite asignar una o más clases al elemento dependiendo de una condición. -->
+        {{zapatilla.marca}}
+      </span>
+      {{zapatilla.nombre}} => <strong [class.alto-precio]="zapatilla.precio >= 80">{{zapatilla.precio}}</strong> <!-- Añadiendo la clase "altoPrecio" al elemento (Basandose en una condición), esta funcionalidad la permite la directiva ngClass [class.nombre-clase]. -->
+    </span>
+    <span *ngIf="zapatilla.precio < 80"> ¡EN OFERTA!</span> <!-- Mostrando el <span> dependiendo de una condición utilizando la directiva estructural (*ngIf). -->
+  </li>  
+</ul>
+
+<h2>Tenemos una variedad de colores de zapatillas, como:</h2>
+<ul [ngSwitch]="color"> <!-- Esta directiva permite realizar un Switch-Case (Se evalúa el valor del ngSwitch). -->
+  <li *ngSwitchCase="'Blanco'"> <!-- En caso de que el valor del ngSwitch sea igual al valor del *ngSwitchCase, se mostrará el congenido del *ngSwitchCase. -->
+    El color <span [ngStyle]="{'background': 'white'}">Blanco</span> <!-- También se añaden estilos utilizando la directiva de atributo ngStyle (Se le entrega como valor un JSON), (Esta directiva permite dar estilos en línea utilizando condicionales y dar). -->
+  </li>
+  <li *ngSwitchCase="'Naranjo'">
+    El color <span [ngStyle]="{'background': 'orange'}">Naranjo</span>  
+  </li>
+  <li *ngSwitchCase="'Amarillo'">
+    El color <span [ngStyle]="{'background': 'yellow'}">Amarillo</span>  
+  </li>
+  <li *ngSwitchCase="'Azul'">
+    El color <span [ngStyle]="{'background': 'blue'}">Azul</span>  
+  </li>
+  <li *ngSwitchCase="'Rojo'">
+    El color <span [ngStyle]="{'background': 'red'}">Rojo</span>  
+  </li>
+</ul>
+
+<h2>Ejemplo de eventos en inputs:</h2>
+<input type="text" (click)="onClick()" (blur)="onBlur()" (keyup.enter)="keyUpEnter()"> <!-- Este input tiene 3 eventos, cada uno llama a un respectivo método. -->
+
+<br/>
+<br/>
+<h2>Ejemplo de uso de directiva personalizada:</h2>
+<div>
+  <p appResaltado>
+    En este texto se esta utilizando una directiva personalizada maldito conchetumare
+  </p>
+</div>

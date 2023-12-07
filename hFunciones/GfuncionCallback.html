@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<!-- El código JS es recomendado colocarlo en la etiqueta <head></head>. -->
+<head>
+    <title>Index</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Código JS. -->
+    <script>
+
+        function sumar(numero1, numero2, muestra) {
+            var suma = numero1 + numero2;
+            muestra(suma);
+            return suma;
+        }
+
+        //Esto es una función Callback (Una función que al llamarla se le entrega como parámetro otra función).
+        sumar(5, 2, function(dato) {
+            console.log("La suma es: ", dato);
+        });
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

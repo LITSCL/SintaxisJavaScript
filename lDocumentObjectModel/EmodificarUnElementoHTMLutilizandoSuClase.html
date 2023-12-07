@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    
+    <div class="rojo">Conetido del div 0</div>
+    <div class="verde">Conetido del div 1</div>
+    <div class="rojo">Conetido del div 2</div>
+    <div class="verde">Conetido del div 3</div>
+    <div class="rojo">Conetido del div 4</div>
+    
+    <!-- El Modelo de Objetos del Documento (DOM) es una interfaz de programación de aplicaciones (API) para documentos HTML y XML. Define la estructura lógica de los documentos y el modo en que se accede y manipula un documento. -->
+    <script>
+        
+        var divsRojos = document.getElementsByClassName("rojo"); //El método getElementsByClassName retorna un array con todos los elementos que tienen el nombre de la clase ingresada por parámetro.
+        console.log(divsRojos); //Aca se esta mostrando el array con todos los elementos con el nombre de clase "rojo";
+        
+        for (let i in divsRojos) {
+            if (divsRojos[i].className === "rojo") {  //Aca se consulta si el nombre de la clase del elemento es "rojo".
+                divsRojos[i].style.background = "red";
+            }
+        }
+                
+    </script>
+</body>
+</html>

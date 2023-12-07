@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <label for="nombre">Nombre</label>
+    <input id="inputTexto" type="text" name="nombre" placeholder="Escribe tu nombre">
+
+
+    <script>
+
+        var input_inputTexto = document.querySelector("#inputTexto");
+
+        input_inputTexto.addEventListener("focus", function(){
+            console.log("[focus] Estas dentro del input");
+        });
+
+        input_inputTexto.addEventListener("blur", function(){
+            console.log("[blur] Estas fuera del input");
+        });
+
+    </script>
+
+</body>
+</html>

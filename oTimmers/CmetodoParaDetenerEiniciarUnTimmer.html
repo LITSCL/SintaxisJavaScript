@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <h1 id="holaMundo">Hola Mundo</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+    <script>
+
+        var h1_holaMundo = document.getElementById("holaMundo");
+        var button_start = document.querySelector("#start");
+        var button_stop = document.querySelector("#stop");
+
+        //Esto es un Timmer que ejecuta el código cada 500ms, el método setInterval recibe como primer parámetro una función callback y como segundo parámetro los milisegundos.
+        var tiempo;
+        function intervalo() {
+
+            tiempo = setInterval(function() {
+                if (h1_holaMundo.style.color === "green") {
+                    document.getElementById("holaMundo").style.color = "red";
+                }
+                else {
+                    document.getElementById("holaMundo").style.color = "green";
+                }
+                console.log("Método Set Interval ejecutado");
+            }, 500);
+        }
+
+        intervalo(); //Aca se esta llamando la función.
+
+            button_stop.addEventListener("click",function() {
+            clearInterval(tiempo); //El método clearInterval deja de iterar el Timmer que se le entrega como parámetro.
+            console.log("Has parado las iteraciones del Timmer");
+        });
+
+            button_start.addEventListener("click",function() {
+            intervalo();
+            console.log("Has iniciado las iteraciones del Timmer");
+        });
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+    <form id="formulario">
+        <select id="frutas">
+            <option value="Manzana">Manzana</option>
+            <option value="Naranja">Naranja</option>
+            <option value="Pera">Pera</option>
+        </select>
+        <input type="button" name="boton" value="Enviar" onclick="mostrarSeleccionado();">
+    </form>
+
+    <div id="contenedor"></div>
+
+    <script>
+        function mostrarSeleccionado() {
+            document.getElementById("contenedor").innerHTML = document.getElementById("frutas").value;
+        }
+    </script>
+
+</body>
+</html>

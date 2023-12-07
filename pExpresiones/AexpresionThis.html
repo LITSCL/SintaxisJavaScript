@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <button id="boton">Colocar el cursor encima para cambiar de color</button>
+
+    <script>
+
+        //El evento mouseover se ejecuta cuando el cursor pasa por encima.
+        boton.addEventListener("mouseover", function() {
+            console.log("[mouseover] Se esta modificando la propiedad background");
+            this.style.background = "yellow"; //La expresión this hace referencia al objeto (boton).
+        });
+
+        //El evento mouseout se ejecuta cuando el cursor se quita de encima.
+        boton.addEventListener("mouseout", function() {
+            console.log("[mouseout] Se esta modificando la propiedad background");
+            boton.style.background = "green";
+        });
+
+    </script>
+
+</body>
+</html>

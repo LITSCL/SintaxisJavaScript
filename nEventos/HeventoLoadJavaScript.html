@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script>
+
+        //El evento load se ejecuta despues de que todo el DOM este cargado, de esa forma podemos colocar el código JavaScript al comienzo de la estructura HTML.
+        window.addEventListener("load", function() {
+
+            var input_inputTexto=document.querySelector("#inputTexto");
+
+            input_inputTexto.addEventListener("keydown", function(event){ //Aca se puede pasar cualquier cosa como parámetro (keydown retorna las letras en mayusculas).
+                console.log("[keydown] Pulsando la telca " + String.fromCharCode(event.keyCode));
+            });
+
+            input_inputTexto.addEventListener("keypress", function(event){ //Aca se puede pasar cualquier cosa como parámetro (keypress retorna las letras en minusculas).
+                console.log("[keypress] Pulsando la telca " + String.fromCharCode(event.keyCode));
+            });
+
+            input_inputTexto.addEventListener("keyup", function(event){ //Aca se puede pasar cualquier cosa como parámetro (keyup retorna las letras en mayusculas).
+                console.log("[keyup] Dejaste de pulsar la tecla " + String.fromCharCode(event.keyCode));
+            });
+
+        });
+
+
+    </script>
+
+
+</head>
+<body>
+
+    <label for="nombre">Nombre</label>
+    <input id="inputTexto" type="text" name="nombre" placeholder="Escribe tu nombre">
+
+</body>
+</html>

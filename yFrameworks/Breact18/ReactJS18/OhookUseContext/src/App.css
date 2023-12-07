@@ -1,0 +1,56 @@
+* {
+  margin: 0px;
+}
+
+body {
+  background-color: #EEE;
+}
+
+form input {
+  display: block;
+  margin: 15px;
+  padding: 15px;
+}
+
+header nav {
+  display: flex;
+  height: 80px;
+  background-color: black;
+  color: white;
+  align-items: center;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+header nav ul {
+  display: flex;
+  flex-basis: 75%;
+  justify-content: flex-end;
+  list-style: none;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+header nav ul li a:hover {
+  color: lightblue;
+}
+
+section {
+  width: 70%;
+  min-height: 350px;
+  background-color: white;
+  border-radius: 15px;
+  border: 1px solid #CCC;
+  margin: 25px auto;
+  padding: 25px;
+}
+
+.activo {
+  font-weight: bold;
+  color: lightblue;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <script>
+
+        var numero1 = 2;
+        var numero2 = 0;
+
+        try { //Aquí se intenta ejecutar las instrucciones.
+            console.log(numero1 / numero2);
+        } catch (e) { //Si las instrucciones generan un error se ejecuta el código del catch.
+            console.log(e);
+        } finally { //Las instrucciones del finally se ejecutan se caiga el código o no.
+            console.log("Me ejecuto de todas formas");
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <script>
+
+        //JSON - JavaScript Object Notation.
+        var pelicula = { //Esto es un objeto JSON.
+            titulo: "Django",
+            year: 2012,
+            pais: "Estados Unidos"
+        };
+
+        var peliculas = [ //Esto es un Array con objetos JSON.
+            {titulo: "La princesa y el piloto", year: 2011, pais: "Japon"},
+            {titulo: "El viaje de Chihiro", year: 2001, pais: "Japon"},
+            pelicula
+        ];
+
+        console.log(pelicula.titulo); //Mostrando en consola el valor de la propiedad.
+        pelicula.titulo = "Django sin cadenas"; //Cambiando el valor de la propiedad.
+        console.log(pelicula.titulo); //Mostrando en consola el valor de la propiedad.
+
+        console.log(peliculas); //Mostrando en consola el Array.
+
+        for (var i in peliculas) { //Recorriendo el Array.
+            document.write(peliculas[i].pais + "<br/>");
+        }
+
+    </script>
+</body>
+</html>

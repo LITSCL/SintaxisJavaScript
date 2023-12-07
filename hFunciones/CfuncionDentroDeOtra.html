@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+<!-- El código JS es recomendado colocarlo en la etiqueta <head></head>. -->
+<head>
+    <title>Index</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Código JS. -->
+    <script>
+        
+        function calculadoraPorConsola(numero1, numero2) { //Creación de función con dos parametros.
+            console.log("la suma de " + numero1 + " con " + numero2 + " es: " + (numero1 + numero2)); //Contenido de la función.
+            console.log("la resta de " + numero1 + " con " + numero2 + " es: " + (numero1 - numero2)); //Contenido de la función.
+            console.log("la multiplicación de " + numero1 + " con " + numero2 + " es: " + (numero1 * numero2)); //Contenido de la función.
+            console.log("la división de " + numero1 + " entre " + numero2 + " es: " + (numero1 / numero2)); //Contenido de la función.
+        }
+        
+        function calculadoraPorBody(numero1, numero2) { //Creación de función con dos parametros.
+            document.write("la suma de " + numero1 + " con " + numero2 + " es: " + (numero1 + numero2) + "<br/>"); //Contenido de la función.
+            document.write("la resta de " + numero1 + " con " + numero2 + " es: " + (numero1 - numero2) + "<br/>"); //Contenido de la función.
+            document.write("la multiplicación de " + numero1 + " con " + numero2 + " es: " + (numero1 * numero2) + "<br/>"); //Contenido de la función.
+            document.write("la división de " + numero1 + " entre " + numero2 + " es: " + (numero1 / numero2)); //Contenido de la función.
+        }
+        
+        //Función que llama dos funciones.
+        function mostrarCalculadora(numero1, numero2){
+            calculadoraPorConsola(numero1, numero2);
+            calculadoraPorBody(numero1, numero2);       
+        }
+        
+        mostrarCalculadora(5, 5); //Llamando función.
+        
+    </script>
+    
+</head>
+<body>
+    
+</body>
+</html>

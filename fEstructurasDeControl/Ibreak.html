@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+<!-- El código JS es recomendado colocarlo en la etiqueta <head></head>. -->
+<head>
+   <title>Index</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <!-- Código JS. -->
+   <script>
+
+      var numero1 = 0;
+      var numero2 = 20;
+
+      console.log("Bucle while");
+      while (numero1 < numero2) { //Repite mientras numero1 sea menor que numero2.
+
+      if (numero1 === 10) {
+         break; //Al leer esta instrucción el programa se sale del bucle.
+      }
+
+      console.log(numero1);
+      numero1++; //La variable numero1 se incrementa en una unidad.
+
+      }
+
+      numero1 = 0;
+      numero2 = 20;
+
+      console.log("Bucle do while");
+      do {
+         if (numero1 === 10) {
+         break; //Al leer esta instrucción el programa se sale del bucle.
+      }
+
+      console.log(numero1);
+      numero1++; //La variable numero1 se incrementa en una unidad.
+
+      } while (numero1 < numero2);
+
+      console.log("Bucle for");
+      for (var i = 0; i < 20; i++) { //La variable i empieza en 0, se repite mientras sea menor que 20 y en cada iteración se incrementa en una unidad la variable i.
+         if (i === 10) {
+            break; //Al leer esta instrucción el programa se sale del bucle.
+         }
+         console.log(i);
+      }
+
+   </script>
+
+</head>
+<body>
+
+</body>
+</html>

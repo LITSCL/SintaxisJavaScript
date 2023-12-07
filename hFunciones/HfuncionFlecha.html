@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<!-- El código JS es recomendado colocarlo en la etiqueta <head></head>. -->
+<head>
+    <title>Index</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Código JS. -->
+    <script>
+
+        function sumar(numero1, numero2, muestra) {
+            var suma = numero1 + numero2;
+            muestra(suma);
+            return suma;
+        }
+
+        //a las funciones flecha, se le quita la palabra "function" y simplemente se colocan los parámetros seguidos de una flecha.
+        sumar(5, 2, dato => {
+            console.log("La suma es: ", dato);
+        });
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+<body>
+    <form id="formulario">
+        <p><input type="radio" name="colores" value="rojo">Rojo</p>
+        <p><input type="radio" name="colores" value="verde">Verde</p>
+        <p><input type="radio" name="colores" value="azul">Azul</p>
+
+        <input type="button" name="boton" value="Enviar" onclick="acciones();">
+    </form>
+
+    <script>
+        function acciones() {
+            if (formulario.colores[0].checked) { //Los RadioButton tienen indice.
+                alert("Eligio " + formulario.colores.value);
+            }
+            else if (formulario.colores[1].checked) {
+                alert("Eligio " + formulario.colores.value);
+            }
+            else {
+                alert("Eligio " + formulario.colores.value);
+            }
+        }
+    </script>
+</body>
+</html>

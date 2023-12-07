@@ -1,0 +1,28 @@
+<h2>Página de usuario:</h2>
+
+<!-- Lo que se ve a continuación es una estructura if-else. -->
+<div *ngIf="identificado == true; else noIdentificado"> <!-- 1. Se utiliza la directiva ngIf para establecer la condición, se añade un ";" y se coloca un identificador de una etiqueta <ng-template> (Dentro de dicha etiqueta es donde van los elementos a mostrar si la condición no se cumple). -->
+    <h3>Estas identificado en la aplicación</h3>
+</div>
+
+<ng-template #noIdentificado> <!-- Si la condición no se cumple se muestra el contenido de esta etiqueta (ng-template es una plantilla). -->
+    <p>No estas identificado, pulsa este botón para identificarte</p>
+    <button (click)="setIdentificado()">Identificarse</button>
+</ng-template>
+
+
+<!-- Esta es otra forma de hace lo mismo de arriba, pero utilizando 2 plantillas (En este caso se usa el then). -->
+<!--
+
+<div *ngIf="identificado == true; then siIdentificado else noIdentificado"></div>
+
+<ng-template #siIdentificado> 
+    <h3>Estas identificado en la aplicación</h3>
+</ng-template>
+
+<ng-template #noIdentificado> 
+    <p>No estas identificado, pulsa este botón para identificarte</p>
+    <button (click)="setIdentificado()">Identificarse</button>
+</ng-template>
+
+-->

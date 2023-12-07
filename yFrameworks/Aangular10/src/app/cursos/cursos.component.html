@@ -1,0 +1,7 @@
+<br/>
+<br/>
+<button (click)="redirigir()">Redirigir a Zapatilla</button>
+<h2>Envía 2 parámetros por la url para verlos:</h2>
+<h3 *ngIf="nombre">Instructor: {{nombre}} - Curso: {{lenguaje}}</h3> 
+
+<!-- NOTA: En este caso solo se valida que se envíe el nombre, pero no existe una ruta con solo un parámetro, así que si se envía un solo parámetro se cargara "127.0.0.1:4200/cursos".  -->

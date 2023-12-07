@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+<!-- El código JS es recomendado colocarlo en la etiqueta <head></head>. -->
+<head>
+    <title>Index</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Código JS. -->
+    <script>
+        
+        //Un array es una colección de datos, basicamente una variable que puede almacenar muchos datos distintos.
+        var lenguajes = ["PHP", "Java", "JavaScript", "Python", "C#"]; //En esta instrucción se esta creando el array y entregando 5 elementos.
+
+        //Proceso de la busqueda utilizando una función de callback (primera forma).
+        var busqueda1 = lenguajes.findIndex(function(lenguajeBuscar) { //El método findIndex (ejecuta función callback), recorre el array hasta encontrar lo que se le está pasando por parámetro, si encuentra el elemento, retorna su indice.
+            return lenguajeBuscar === "PHP";
+        });
+        
+        console.log(busqueda1); //Imprimiendo en consola el valor retornado en la función anterior (lo que retorna el método findIndex).
+        
+        var lenguajes = ["PHP", "Java", "JavaScript", "Python", "C#"]; //En esta instrucción se esta creando el array y entregando 5 elementos.
+
+        //Proceso de la busqueda utilizando una función de callback (segunda forma).
+        var busqueda2 = lenguajes.findIndex(lenguajeBuscar => lenguajeBuscar === "PHP"); //El método findIndex (ejecuta función callback), recorre el array hasta encontrar lo que se le está pasando por parámetro, si encuentra el elemento, retorna su indice.
+            
+        console.log(busqueda2); //Imprimiendo en consola el valor retornado en la función anterior (lo que retorna el método findIndex).
+        
+    </script>
+    
+</head>
+<body>
+    
+</body>
+</html>

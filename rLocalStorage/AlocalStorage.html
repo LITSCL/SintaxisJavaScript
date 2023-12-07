@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <script>
+
+        //El LocalStorage permite guardar información en el navegador, que dicha información persista durante la navegación de las diferentes páginas.
+        if (typeof(Storage) !== "undefined") { //Aca se esta consultando si el navegador soporta LocalStorage.
+            console.log("LocalStorage disponible");
+        }
+        else {
+            console.log("LocalStorage no disponible")
+        }
+
+        //Guardar datos en el LocalStorage.
+        localStorage.setItem("Titulo","Curso de JS"); //El primer argumento es la clave, el segundo el valor.
+
+        //Obtener un elemento del LocalStorage.
+        console.log(localStorage.getItem("Titulo")); //Se obtiene el valor usando la clave.
+
+        //Guardar un objeto JSON en el LocalStorage.
+        var usuario = { //Aca se crea el objeto y se almacena en una varialbe.
+            nombre: "Daniel Alvarez",
+            correo: "daniel@protonmail.com",
+            web: "daniel.org"
+        };
+
+        localStorage.setItem("Usuario", JSON.stringify(usuario)); //Aca se esta guardando el objeto en el LocalStorage (El valor se tiene que guardar como String).
+
+        //Obtener un objeto JSON String del LocalStorage.
+        var usuarioStorage = JSON.parse(localStorage.getItem("Usuario")); //Se convierte el String a un objeto JSON.
+        console.log(usuarioStorage);
+
+        //Borrar un elemento del LocalStorage.
+        localStorage.setItem("Lenguaje", "PHP");
+        localStorage.removeItem("Lenguaje"); //Aca se esta borrando el elemento utilizando su clave.
+
+        //Borrar todos los datos del LocalStorage.
+        //localStorage.clear();
+
+    </script>
+</body>
+</html>

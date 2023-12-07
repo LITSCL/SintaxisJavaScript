@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+<!-- El código JS es recomendado colocarlo en la etiqueta <head></head>. -->
+<head>
+    <title>Index</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Código JS. -->
+    <script>
+        
+        //Un array es una colección de datos, basicamente una variable que puede almacenar muchos datos distintos.
+        var array = ["PHP", 50, true, false, 15.5]; //En esta instrucción se esta creando el array y entregando 5 elementos.
+
+        document.write("<ul>");
+        
+        for (let i in array) { //Recorriendo con un bucle for in, para ello se crea una variable llamada i y se repite el bucle según la cantidad de indices que tenga el array.
+            document.write("<li>" + array[i] + "</li>");
+        }
+        
+        document.write("</ul>");
+        
+    </script>
+    
+</head>
+<body>
+    
+</body>
+</html>

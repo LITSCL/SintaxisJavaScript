@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+<!-- El código JS es recomendado colocarlo en la etiqueta <head></head>. -->
+<head>
+    <title>Index</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Código JS. -->
+    <script>
+        
+        function listadoDeFrutas(fruta1, fruta2, ...restoDeFrutas){ //El ultimo parámetro es de tipo Rest (Mete los datos en un array).
+            console.log("Fruta 1: ", fruta1);
+            console.log("Fruta 2: ", fruta2);
+            console.log(restoDeFrutas); //Esto devuelve un array con los parámetros extras que se almacenaron en el parámetro Rest.
+            
+        }
+        
+        var frutas = ["Naranja", "Manzana"]; //Se crea un array con dos elementos.
+        listadoDeFrutas(...frutas, "Pera", "Sandía", "Melón", "Coco"); //El primer parámetro es de tipo Spread (cada elemento del array lo coloca en orden en la llamadda de la función, reemplazando la fruta1 y fruta2).
+        
+    </script>
+    
+</head>
+<body>
+    
+</body>
+</html>
