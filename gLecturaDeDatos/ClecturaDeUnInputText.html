@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <title></title>
 </head>
 <body>
   
-  <form class="formulario" action="#" method="GET">
+    <form class="formulario" action="#" method="GET">
         Nombre:<input type="text" id="nombre">
         <input type="submit" onclick="escribirNombre();"> <!-- Aca se utiliza un listener para que ejecute el método. -->
-  </form>
+    </form>
 
-  <script>
+    <script>
+
         function escribirNombre() {
             var nombre = document.getElementById("nombre").value; //Aca se obtiene el valor del elemento.
             document.write(nombre); //Aca se esta mostrando el valor del elemento en el documento.
         }
-  </script>
+
+    </script>
 
 </body>
 </html>
